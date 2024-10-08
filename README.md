@@ -2,7 +2,7 @@
 Rich language-guided failure recovery data augmentation pipeline
 
 <div style="text-align: center;">
-  <img src="./data_pipeline_final-website.png" alt="Local Image" width="500" height="340">
+  <img src="./data_pipeline_final-website.png" alt="Local Image" width="700" height="450">
 </div>
 
 Code coming soon~
