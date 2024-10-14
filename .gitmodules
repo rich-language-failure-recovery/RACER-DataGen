@@ -1,20 +1,20 @@
 [submodule "libs/PyRep"]
 	path = libs/PyRep
 	url = https://github.com/jayjunlee/PyRep.git
-    branch = early
+
 [submodule "libs/RLBench"]
 	path = libs/RLBench
 	url = https://github.com/jayjunlee/RLBench.git
-    branch = early
+	branch = early
 [submodule "libs/YARR"]
 	path = libs/YARR
 	url = https://github.com/jayjunlee/YARR.git
-    branch = early
+	branch = early
 [submodule "libs/peract"]
-	path = rvt/libs/peract
+	path = libs/peract
 	url = https://github.com/jayjunlee/peract.git
-    branch = early
+	branch = early
 [submodule "libs/peract_colab/peract_colab"]
 	path = libs/peract_colab/peract_colab
 	url = https://github.com/jayjunlee/peract_colab.git
-    branch = early
+	branch = early
