@@ -1,0 +1,22 @@
+coarse_alignment:
+  use_rotation_noise: False
+  translation_noise:
+    lowerbound: 0.05
+    upperbound: 0.1
+
+general_grasp:
+  translation_noise:
+    lowerbound: 0.01
+    upperbound: 0.03
+  interpolation_noise:
+    lowerbound: 0.5
+    upperbound: 0.8
+
+intermediate:
+  lowerbound: 0.25
+  upperbound: 0.75
+
+general_place:
+  interpolation_noise:
+    lowerbound: 0.2
+    upperbound: 0.5

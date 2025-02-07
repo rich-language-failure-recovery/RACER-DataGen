@@ -1,0 +1,7 @@
+coarse_alignment:
+  use_rotation_noise: False
+  translation_noise:
+    noise_type: "gaussian"
+    scale: 0.033
+    lowerbound: 0.01
+    upperbound: 0.05

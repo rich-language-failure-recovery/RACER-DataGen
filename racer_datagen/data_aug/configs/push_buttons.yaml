@@ -1,0 +1,11 @@
+general_grasp:
+  translation_noise:
+    lowerbound: 0.02
+    upperbound: 0.05
+  interpolation_noise:
+    lowerbound: 0.03
+    upperbound: 0.05
+
+intermediate:
+  lowerbound: 0.04
+  upperbound: 0.06

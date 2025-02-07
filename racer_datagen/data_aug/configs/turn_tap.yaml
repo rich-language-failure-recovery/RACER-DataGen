@@ -1,0 +1,23 @@
+general_grasp:
+  translation_noise:
+    lowerbound: 0.02
+    upperbound: 0.04
+  interpolation_noise:
+    lowerbound: 0.03
+    upperbound: 0.05
+
+coarse_alignment:
+  translation_noise:
+    noise_type: "gaussian"
+    scale: 0.033
+    lowerbound: 0.001
+    upperbound: 0.01
+  rotation_noise:
+    noise_type: "uniform"
+    scale: 1.0
+    lowerbound: 0.0
+    upperbound: 0.314
+
+intermediate:
+  lowerbound: 0.04
+  upperbound: 0.08

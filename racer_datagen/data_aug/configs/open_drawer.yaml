@@ -1,0 +1,16 @@
+general_place:
+  interpolation_noise:
+    lowerbound: 0.5
+    upperbound: 0.8
+
+coarse_alignment:
+  translation_noise:
+    noise_type: "gaussian"
+    scale: 0.033
+    lowerbound: 0.05
+    upperbound: 0.1
+  rotation_noise:
+    noise_type: "uniform"
+    scale: 1.0
+    lowerbound: 0.157
+    upperbound: 0.314

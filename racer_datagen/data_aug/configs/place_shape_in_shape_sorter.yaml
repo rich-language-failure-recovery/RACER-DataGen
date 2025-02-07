@@ -1,0 +1,17 @@
+general_grasp:
+  use_interpolation_noise: False
+  use_translation_noise: False
+
+coarse_alignment:
+  use_rotation_noise: True
+  use_translation_noise: False
+  rotation_noise:
+    lowerbound: 0.26
+    upperbound: 1.31
+
+fine_alignment:
+  use_rotation_noise: False
+  use_translation_noise: False
+
+general_place:
+  use_interpolation_noise: False

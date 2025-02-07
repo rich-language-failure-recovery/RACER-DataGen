@@ -1,0 +1,4 @@
+coarse_alignment:
+  rotation_noise:
+    lowerbound: 0.52
+    upperbound: 1.05

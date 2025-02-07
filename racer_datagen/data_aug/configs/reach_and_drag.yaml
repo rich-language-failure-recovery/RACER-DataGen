@@ -1,0 +1,16 @@
+
+is_same_R_thres: 3.
+
+general_grasp:
+  translation_noise:
+    lowerbound: 0.02
+    upperbound: 0.1
+  interpolation_noise:
+    lowerbound: 0.03
+    upperbound: 0.05
+
+
+general_place:
+  interpolation_noise:
+    lowerbound: 0.2
+    upperbound: 0.5

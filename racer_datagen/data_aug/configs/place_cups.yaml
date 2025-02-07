@@ -1,0 +1,17 @@
+is_in_line_thres:
+  0.15
+
+general_place:
+  use_interpolation_noise: False
+
+coarse_alignment:
+  translation_noise:
+    noise_type: "gaussian"
+    scale: 0.033
+    lowerbound: 0.03
+    upperbound: 0.05
+  rotation_noise:
+    noise_type: "uniform"
+    scale: 1.0
+    lowerbound: 1.22
+    upperbound: 1.92

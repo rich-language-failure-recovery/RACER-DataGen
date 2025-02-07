@@ -1,0 +1,7 @@
+general_grasp:
+  interpolation_noise:
+    lowerbound: 0.05
+    upperbound: 0.5
+
+general_place:
+  use_interpolation_noise: False

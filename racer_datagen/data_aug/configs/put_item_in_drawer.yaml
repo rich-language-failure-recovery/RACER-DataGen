@@ -1,0 +1,20 @@
+general_grasp:
+  use_translation_noise: false
+  use_interpolation_noise: false
+
+coarse_alignment:
+  use_translation_noise: true
+  use_rotation_noise: true
+  translation_noise:
+    noise_type: "gaussian"
+    scale: 0.033
+    lowerbound: 0.01
+    upperbound: 0.1
+  rotation_noise:
+    noise_type: "uniform"
+    scale: 1.0
+    lowerbound: 0.440 # 25 degrees
+    upperbound: 0.885 # 3.14 / 4 + 0.1
+
+general_place:
+  use_interpolation_noise: false
