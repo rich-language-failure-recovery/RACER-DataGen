@@ -1,20 +1,20 @@
 [submodule "libs/PyRep"]
-	path = libs/PyRep
+	path = racer_datagen/libs/PyRep
 	url = https://github.com/jayjunlee/PyRep.git
 
 [submodule "libs/RLBench"]
-	path = libs/RLBench
+	path = racer_datagen/libs/RLBench
 	url = https://github.com/jayjunlee/RLBench.git
 	branch = early
 [submodule "libs/YARR"]
-	path = libs/YARR
+	path = racer_datagen/libs/YARR
 	url = https://github.com/jayjunlee/YARR.git
 	branch = early
 [submodule "libs/peract"]
-	path = libs/peract
+	path = racer_datagen/libs/peract
 	url = https://github.com/jayjunlee/peract.git
 	branch = early
 [submodule "libs/peract_colab/peract_colab"]
-	path = libs/peract_colab/peract_colab
+	path = racer_datagen/libs/peract_colab/peract_colab
 	url = https://github.com/jayjunlee/peract_colab.git
 	branch = early
