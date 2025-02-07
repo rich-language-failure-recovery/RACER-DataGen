@@ -144,13 +144,13 @@ def episode_to_json_converter(ep_save_path: str, save_path: str, episode: Episod
                 # tokens = clip.tokenize(f"task goal: {episode.lang_goal}, current instruction: {system_response_dict[str(i)]}")
                 # print(f"keypoint_number: {keypoint_number}, action_type: {action_type}, tokens: {(tokens != 0).sum().item()}")
 
-        if episode.task_name == "place_cups":
-            if perturb_idx is None:
-                perturb_idx = 0
-            with open(os.path.join(ep_save_path, f"output/{perturb_idx}/place_cups_dense.json"), "r") as f:
-                dense = json.load(f)
-                subgoal = merge_and_sort_dicts(language["subgoal"], dense)
-                language["subgoal"] = subgoal
+        # if episode.task_name == "place_cups":
+        #     if perturb_idx is None:
+        #         perturb_idx = 0
+        #     with open(os.path.join(ep_save_path, f"output/{perturb_idx}/place_cups_dense.json"), "r") as f:
+        #         dense = json.load(f)
+        #         subgoal = merge_and_sort_dicts(language["subgoal"], dense)
+        #         language["subgoal"] = subgoal
         
         language["subgoal"] = dict(sorted(language["subgoal"].items(), key=lambda item: int(item[0].split('_')[0])))
             

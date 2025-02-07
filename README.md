@@ -46,6 +46,8 @@ We will generate augmented expert trajectories to `RACER/racer/data/augmented_rl
 
   cd racer_datagen
 
+  # Make changes to data_aug/configs/*.yaml files to experiment with perturbations at different waypoints
+
   # Generates data to train RACER annotated_episode.pkl, language_description.json, actions.csv
   python online_rollout/generate_data.py
   
@@ -113,9 +115,8 @@ RACER-DataGen
         ├── task_specific_examples.py: example input-output prompt for harder tasks
         ├── example_prompt.py: previously attempted prompts
         ├── main_prompt.py: main prompt template
-        ├── episode_to_json_converter.py
-        ├── lang_json_to_llava_json.py
-        ├── lang_json_to_llava_json_ver2.py
+        ├── episode_to_json_converter.py: Episode to language_descriptions.json (in generate_data.py)
+        ├── lang_json_to_llava_json.py: language_descriptions.json to llava.json
         └── test
             ├── check_lang_desc_exist.py
             ├── check_truncated_text.py

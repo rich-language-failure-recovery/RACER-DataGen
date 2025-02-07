@@ -241,33 +241,33 @@ class Episode:
             episode_num=ep_num,
             lang_goal=lang_goal)
 
-        if task_name == "place_cups":
-            from racer_datagen.data_aug.heuristic_augmentor import Heuristic
-            augmentor = Heuristic(task_name, cfg_path=f"{BASE_PATH}/data_aug/configs/{task_name}.yaml")
-            ep_copy = augmentor.heuristic_perturb(copy.deepcopy(ep), N=0)
-            kwpt_list = list(ep_copy.retrieve_keypoints())
-            n_sample = 4
-            every = 6
-            for idx, step in enumerate(kwpt_list):
-                curr_kwpt = ep_copy.waypoints[step]
-                if idx <= len(kwpt_list) - 3:
-                    next_kwpt = ep_copy.waypoints[kwpt_list[idx+1]]
-                    next_next_kwpt = ep_copy.waypoints[kwpt_list[idx+2]]
-                    if next_kwpt.verbose.get("is", None) == "alignment step" and next_next_kwpt.verbose.get("is", None) == "general place":
-                        start_dense = max((kwpt_list[idx] + (kwpt_list[idx+1] - kwpt_list[idx]) // 3, kwpt_list[idx+1] - n_sample * every))
-                        print(start_dense, kwpt_list[idx+1]-1, len(ep_copy))
-                        dense_idx = np.linspace(start_dense, kwpt_list[idx+1]-1, n_sample, dtype=int).tolist()
-                        ep.waypoints[step].dense = ep_copy[dense_idx]
-                    if curr_kwpt.verbose.get("is", None) is None and next_kwpt.verbose.get("is", None) == "general place":
-                        dense_idx = np.linspace(step+1 + (kwpt_list[idx+1] - step) // 2, kwpt_list[idx+1]-1, 5, dtype=int).tolist()
-                        ep.waypoints[step].dense = ep_copy[dense_idx]
-                print(f"idx {idx} expert step {step}:", curr_kwpt.action.to_interaction(), " | ", curr_kwpt.verbose)
-                for i, perturb_wpt in enumerate(curr_kwpt.perturbations):
-                    print(f"\tperturb {i}:", perturb_wpt.mistake.action.to_interaction())
-                    if perturb_wpt.correction is not None:
-                        print(f"\tcorrect {i}:", perturb_wpt.correction.action.to_interaction())
-                    else:
-                        print(f"\tcorrect {i}:", None)
+        # if task_name == "place_cups":
+        #     from racer_datagen.data_aug.heuristic_augmentor import Heuristic
+        #     augmentor = Heuristic(task_name, cfg_path=f"{BASE_PATH}/data_aug/configs/{task_name}.yaml")
+        #     ep_copy = augmentor.heuristic_perturb(copy.deepcopy(ep), N=0)
+        #     kwpt_list = list(ep_copy.retrieve_keypoints())
+        #     n_sample = 4
+        #     every = 6
+        #     for idx, step in enumerate(kwpt_list):
+        #         curr_kwpt = ep_copy.waypoints[step]
+        #         if idx <= len(kwpt_list) - 3:
+        #             next_kwpt = ep_copy.waypoints[kwpt_list[idx+1]]
+        #             next_next_kwpt = ep_copy.waypoints[kwpt_list[idx+2]]
+        #             if next_kwpt.verbose.get("is", None) == "alignment step" and next_next_kwpt.verbose.get("is", None) == "general place":
+        #                 start_dense = max((kwpt_list[idx] + (kwpt_list[idx+1] - kwpt_list[idx]) // 3, kwpt_list[idx+1] - n_sample * every))
+        #                 print(start_dense, kwpt_list[idx+1]-1, len(ep_copy))
+        #                 dense_idx = np.linspace(start_dense, kwpt_list[idx+1]-1, n_sample, dtype=int).tolist()
+        #                 ep.waypoints[step].dense = ep_copy[dense_idx]
+        #             if curr_kwpt.verbose.get("is", None) is None and next_kwpt.verbose.get("is", None) == "general place":
+        #                 dense_idx = np.linspace(step+1 + (kwpt_list[idx+1] - step) // 2, kwpt_list[idx+1]-1, 5, dtype=int).tolist()
+        #                 ep.waypoints[step].dense = ep_copy[dense_idx]
+        #         print(f"idx {idx} expert step {step}:", curr_kwpt.action.to_interaction(), " | ", curr_kwpt.verbose)
+        #         for i, perturb_wpt in enumerate(curr_kwpt.perturbations):
+        #             print(f"\tperturb {i}:", perturb_wpt.mistake.action.to_interaction())
+        #             if perturb_wpt.correction is not None:
+        #                 print(f"\tcorrect {i}:", perturb_wpt.correction.action.to_interaction())
+        #             else:
+        #                 print(f"\tcorrect {i}:", None)
             # ep = ep_copy
         ep.update_info()
         return ep
